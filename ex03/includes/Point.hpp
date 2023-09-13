@@ -3,10 +3,25 @@
 
 #include <cmath>
 #include <iostream>
+#include "Fixed.hpp"
 
 class	Point {
 	public:
+		Point( void );
+		Point( float const xValue, float const yValue );
+		Point( Point const &copy );
+		Point &	operator=( Point const &copy );
+		~Point( void );
+
+		Fixed	getX( void ) const ;
+		Fixed	getY( void ) const ;
+
+		void	setX( Fixed const x );
+		void	setY( Fixed const y );
 
 	private:
-		
+		Fixed	_x;
+		Fixed	_y;
 };
+
+#endif

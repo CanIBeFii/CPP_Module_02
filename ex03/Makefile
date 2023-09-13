@@ -1,10 +1,10 @@
 NAME = ex03
 
-HEADERS_LIST = Fixed.hpp
+HEADERS_LIST = Fixed.hpp Point.hpp
 HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
-SOURCES_LIST = main.cpp Fixed.cpp
+SOURCES_LIST = main.cpp Fixed.cpp Point.cpp
 SOURCES_DIRECTORY = ./sources/
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
