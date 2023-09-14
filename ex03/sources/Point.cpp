@@ -1,11 +1,11 @@
 #include "Point.hpp"
 
 Point::Point( void ) : _x( 0 ), _y ( 0 ) {
-	std::cout << "Point Default constructor called" << std::endl;
+	// std::cout << "Point Default constructor called" << std::endl;
 }
 
 Point::Point( float const xValue, float const yValue ) : _x( xValue ), _y( yValue ) {
-	std::cout << "Point float values constructor called" << std::endl;
+	// std::cout << "Point float values constructor called" << std::endl;
 }
 
 Point::Point( Point const &copy ) {
@@ -23,7 +23,7 @@ Point&	Point::operator=( const Point& copy ) {
 
 
 Point::~Point( void ) {
-	std::cout << "Deconstructo called" << std::endl;
+	// std::cout << "Deconstructor called" << std::endl;
 }
 
 Fixed	Point::getX( void ) const {

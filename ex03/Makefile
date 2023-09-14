@@ -4,7 +4,7 @@ HEADERS_LIST = Fixed.hpp Point.hpp
 HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
-SOURCES_LIST = main.cpp Fixed.cpp Point.cpp
+SOURCES_LIST = main.cpp Fixed.cpp Point.cpp bsp.cpp
 SOURCES_DIRECTORY = ./sources/
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
