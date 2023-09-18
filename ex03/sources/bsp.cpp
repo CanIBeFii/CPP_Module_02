@@ -4,13 +4,13 @@ float	absolute( float number ) {
 	return ( number < 0 ? number * -1 : number );
 }
 
-float	trianguleArea( Point const a, Point const b, Point const c ) {
+float	trianguleArea( const Point a, const Point b, const Point c ) {
 	return ( 0.5 * absolute((a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()))
 			+ (b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()))
 			+ (c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat()))));
 }
 
-bool	bsp( Point const a, Point const b, Point const c, Point const point ) {
+bool	bsp( const Point a, const Point b, const Point c, const Point point ) {
 	float	area1 = trianguleArea(a, b, point);
 	float	area2 = trianguleArea(b, c, point);
 	float	area3 = trianguleArea(a, c, point);

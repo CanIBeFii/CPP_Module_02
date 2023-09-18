@@ -4,11 +4,11 @@ Point::Point( void ) : _x( 0 ), _y ( 0 ) {
 	// std::cout << "Point Default constructor called" << std::endl;
 }
 
-Point::Point( float const xValue, float const yValue ) : _x( xValue ), _y( yValue ) {
+Point::Point( const float xValue, const float yValue ) : _x( xValue ), _y( yValue ) {
 	// std::cout << "Point float values constructor called" << std::endl;
 }
 
-Point::Point( Point const &copy ) {
+Point::Point( const Point& copy ) {
 	setX( copy.getX() );
 	setY( copy.getY() );
 }
@@ -34,11 +34,11 @@ Fixed	Point::getY( void ) const {
 	return ( _y );
 }
 
-void	Point::setX( Fixed const x ) {
+void	Point::setX( const Fixed x ) {
 	_x = x;
 }
 
-void	Point::setY( Fixed const y ) {
+void	Point::setY( const Fixed y ) {
 	_y = y;
 }
 
