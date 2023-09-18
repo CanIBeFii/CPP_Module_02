@@ -4,13 +4,13 @@ Fixed::Fixed( void ) : _rawValue( 0 ) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( Fixed &copy ) {
+Fixed::Fixed( const Fixed &copy ) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 	//_rawValue = copy.getRawBits();
 }
 
-Fixed & Fixed::operator = ( Fixed const &copy ) {
+Fixed& Fixed::operator = ( const Fixed &copy ) {
 	std::cout << "Copy assigment operator called" <<std::endl;
 
 	if ( this != &copy ) {
@@ -29,7 +29,7 @@ int		Fixed::getRawBits( void ) const {
 	return ( _rawValue );
 }
 
-void	Fixed::setRawBits( int const raw ) {
+void	Fixed::setRawBits( const int raw ) {
 	std::cout << "setRwBits member function called" << std::endl;
 
 	_rawValue = raw;
