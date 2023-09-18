@@ -22,7 +22,7 @@ Fixed::Fixed( const Fixed &copy ) {
 	//_rawValue = copy.getRawBits();
 }
 
-Fixed & Fixed::operator = ( Fixed const &copy ) {
+Fixed & Fixed::operator = ( const Fixed& copy ) {
 	std::cout << "Copy assigment operator called" <<std::endl;
 
 	if ( this != &copy ) {
@@ -47,13 +47,13 @@ int		Fixed::getRawBits( void ) const {
 	return ( _rawValue );
 }
 
-void	Fixed::setRawBits( int const raw ) {
+void	Fixed::setRawBits( const int raw ) {
 	std::cout << "setRwBits member function called" << std::endl;
 
 	_rawValue = raw;
 }
 
-std::ostream & operator << ( std::ostream &out, Fixed const &f ) {
+std::ostream& operator << ( std::ostream& out, const Fixed& f ) {
 	out << f.toFloat();
 	return ( out );
 }
