@@ -9,31 +9,31 @@ class Fixed {
 		Fixed( void );
 		Fixed( const int intValue );
 		Fixed( const float floatValue );
-		Fixed( const Fixed &copy );
-		Fixed& operator=( Fixed const &copy );
+		Fixed( const Fixed& copy );
+		Fixed& operator=( const Fixed& copy );
 		~Fixed( void );
 	
 		float	toFloat( void ) const ;
 		int		toInt( void ) const ;
 
 		int		getRawBits( void ) const ;
-		void	setRawBits( int const raw );
+		void	setRawBits( const int raw );
 
 		// Comparison Operators
 
-		int	operator > ( const Fixed &f ) const ;
-		int operator < ( const Fixed &f ) const ;
-		int operator >= ( const Fixed &f ) const ;
-		int operator <= ( const Fixed &f ) const ;
-		int operator == ( const Fixed &f ) const ;
-		int operator != ( const Fixed &f ) const ;
+		int	operator > ( const Fixed& f ) const ;
+		int operator < ( const Fixed& f ) const ;
+		int operator >= ( const Fixed& f ) const ;
+		int operator <= ( const Fixed& f ) const ;
+		int operator == ( const Fixed& f ) const ;
+		int operator != ( const Fixed& f ) const ;
 
 		// Arithmetic Operators
 
-		Fixed	operator + ( const Fixed &f ) const ;
-		Fixed	operator - ( const Fixed &f ) const ;
-		Fixed	operator * ( const Fixed &f ) const ;
-		Fixed	operator / ( const Fixed &f ) const ;
+		Fixed	operator + ( const Fixed& f ) const ;
+		Fixed	operator - ( const Fixed& f ) const ;
+		Fixed	operator * ( const Fixed& f ) const ;
+		Fixed	operator / ( const Fixed& f ) const ;
 
 		// Pre-Increment/Pre-Decrement Operators
 
@@ -47,17 +47,17 @@ class Fixed {
 
 		// Min and Max Functions
 
-		static Fixed	&min( Fixed &f1, Fixed &f2 );
-		static Fixed	&min( const Fixed &f1, const Fixed &f2 );
-		static Fixed	&max( Fixed &f1, Fixed &f2 );
-		static Fixed	&max( const Fixed &f1, const Fixed &f2 );
+		static Fixed&	min( Fixed& f1, Fixed& f2 );
+		static Fixed&	min( const Fixed& f1, const Fixed& f2 );
+		static Fixed&	max( Fixed& f1, Fixed& f2 );
+		static Fixed&	max( const Fixed& f1, const Fixed& f2 );
 
 	private:
 		int					_rawValue;
 		static const int	_fractionalBits = 8;
 };
 
-std::ostream & operator << ( std::ostream &out, Fixed const &f );
+std::ostream& operator << ( std::ostream& out, const Fixed& f );
 
 #endif 
 

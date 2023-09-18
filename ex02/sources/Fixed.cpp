@@ -22,7 +22,7 @@ Fixed::Fixed( const Fixed &copy ) {
 	//_rawValue = copy.getRawBits();
 }
 
-Fixed & Fixed::operator = ( Fixed const &copy ) {
+Fixed & Fixed::operator = ( const Fixed& copy ) {
 	// std::cout << "Copy assigment operator called" <<std::endl;
 
 	if ( this != &copy ) {
@@ -53,37 +53,37 @@ void	Fixed::setRawBits( int const raw ) {
 
 // Comparison Operators
 
-int		Fixed::operator > ( const Fixed &f ) const {
+int		Fixed::operator > ( const Fixed& f ) const {
 	if ( this->toFloat() > f.toFloat() )
 		return ( 1 );
 	return ( 0 );
 }
 
-int		Fixed::operator < ( const Fixed &f ) const {
+int		Fixed::operator < ( const Fixed& f ) const {
 	if ( this->toFloat() < f.toFloat() )
 		return ( 1 );
 	return ( 0 );
 }
 
-int		Fixed::operator >= ( const Fixed &f ) const {
+int		Fixed::operator >= ( const Fixed& f ) const {
 	if ( this->toFloat() >= f.toFloat() )
 		return ( 1 );
 	return ( 0 );
 }
 
-int		Fixed::operator <= ( const Fixed &f ) const {
+int		Fixed::operator <= ( const Fixed& f ) const {
 	if ( this->toFloat() <= f.toFloat() )
 		return ( 1 );
 	return ( 0 );
 }
 
-int		Fixed::operator == ( const Fixed &f ) const {
+int		Fixed::operator == ( const Fixed& f ) const {
 	if ( this->toFloat() == f.toFloat() )
 		return ( 1 );
 	return ( 0 );
 }
 
-int		Fixed::operator != ( const Fixed &f ) const {
+int		Fixed::operator != ( const Fixed& f ) const {
 	if ( this->toFloat() != f.toFloat() )
 		return ( 1 );
 	return ( 0 );
@@ -91,21 +91,21 @@ int		Fixed::operator != ( const Fixed &f ) const {
 
 // Arithmetic Operators
 
-Fixed	Fixed::operator + ( const Fixed &f ) const {
+Fixed	Fixed::operator + ( const Fixed& f ) const {
 	Fixed	newFixed;
 
 	newFixed.setRawBits( getRawBits() + f.getRawBits() );
 	return ( newFixed );
 }
 
-Fixed	Fixed::operator - ( const Fixed &f ) const {
+Fixed	Fixed::operator - ( const Fixed& f ) const {
 	Fixed	newFixed;
 
 	newFixed.setRawBits( getRawBits() - f.getRawBits() );
 	return ( newFixed );
 }
 
-Fixed	Fixed::operator * ( const Fixed &f ) const {
+Fixed	Fixed::operator * ( const Fixed& f ) const {
 	Fixed	newFixed;
 
 	newFixed.setRawBits( getRawBits() * f.getRawBits() );
@@ -113,7 +113,7 @@ Fixed	Fixed::operator * ( const Fixed &f ) const {
 	return ( newFixed );
 }
 
-Fixed	Fixed::operator / ( const Fixed &f ) const {
+Fixed	Fixed::operator / ( const Fixed& f ) const {
 	Fixed	newFixed;
 
 	newFixed.setRawBits( getRawBits() << _fractionalBits );
@@ -151,23 +151,23 @@ Fixed	Fixed::operator -- ( int ) {
 
 // Min and Max Functions
 
-Fixed	&Fixed::min( Fixed &f1, Fixed &f2 ) {
+Fixed&	Fixed::min( Fixed& f1, Fixed& f2 ) {
 	return ( f1 < f2 ? f1 : f2 );
 }
 
-Fixed	&Fixed::min( const Fixed &f1, const Fixed &f2 ) {
+Fixed&	Fixed::min( const Fixed& f1, const Fixed& f2 ) {
 	return ( Fixed::min( (Fixed &)f1, (Fixed &)f2) );
 }
 
-Fixed	&Fixed::max( Fixed &f1, Fixed &f2 ) {
+Fixed&	Fixed::max( Fixed& f1, Fixed& f2 ) {
 	return ( f1 > f2 ? f1 : f2 );
 }
 
-Fixed	&Fixed::max( const Fixed &f1, const Fixed &f2 ) {
+Fixed&	Fixed::max( const Fixed& f1, const Fixed& f2 ) {
 	return ( Fixed::max( (Fixed &)f1, (Fixed &)f2) );
 }
 
-std::ostream & operator << ( std::ostream &out, Fixed const &f ) {
+std::ostream& operator << ( std::ostream& out, const Fixed& f ) {
 	out << f.toFloat();
 	return ( out );
 }
